@@ -1,0 +1,14 @@
+<div data-hook="admin_country_state_title_fields" class="row">
+  <div class="alpha four columns">
+    <div data-hook="name" class="field">
+      <%= f.label :state_title, Spree.t(:state_title) %>
+      <%= f.text_field :state_title, :class => 'fullwidth' %>
+    </div>
+  </div>
+  <div class="four columns">
+    <div data-hook="iso_name" class="field">
+      <%= f.label :zip_title, Spree.t(:zip_title) %>
+      <%= f.text_field :zip_title, :class => 'fullwidth' %>
+    </div>
+  </div>
+</div>
