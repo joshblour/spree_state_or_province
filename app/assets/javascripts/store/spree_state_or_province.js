@@ -6,20 +6,24 @@ Spree.ready(function($) {
       return $('#' + region + 'country select').val();
     };
     
-    updateStateAndZipName = function(region) {
-      var countryId;
-      var country_hash
-      countryId = parseInt(getCountryId(region));
-      country_hash = Spree.state_and_zip_titles[countryId];
+    if (Spree.state_and_zip_titles != undefined) {
+    
+      updateStateAndZipName = function(region) {
+        var countryId;
+        var country_hash
+        countryId = parseInt(getCountryId(region));
+        country_hash = Spree.state_and_zip_titles[countryId];
+        default_titles = Spree.default_titles;
       
-      if (country_hash != null) {
-          setStateName(country_hash.state_title, region)
-          setZipName(country_hash.zip_title, region)
-        } else {
-          setStateName('State', region)
-          setZipName('Zip code', region)
-        }
-    };
+        if (country_hash != null) {
+            setStateName(country_hash.state_title, region)
+            setZipName(country_hash.zip_title, region)
+          } else {
+            setStateName(default_titles.state_title, region)
+            setZipName(default_titles.zip_title, region)
+          }
+      };
+    }
     
     setStateName = function(new_name, region) {
       $('#' + region + 'state label').html(new_name)

@@ -9,7 +9,7 @@ Deface::Override.new(
       Spree.state_and_zip_titles = {}
     }
     Spree.state_and_zip_titles = <%= raw Spree::Country.state_and_zip_titles.to_json %>
-
+    Spree.default_titles = <%= raw Spree::Country.default_titles.to_json %>
   </script>',
   :name          => "add_country_state_and_zip_titles_to_address_form"
   )
