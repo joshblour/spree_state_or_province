@@ -1,4 +1,3 @@
-//= require store/spree_frontend
 Spree.ready(function($) {
   var getCountryId, updateStateAndZipName, setStateName, setZipName;
   
